@@ -50,8 +50,7 @@ function HealthPage() {
                     <p className="text-gray-500">Cargando...</p>
                 )}
             </div>
-        </div>
-    );
+        </div>    );
 }
 
 export default HealthPage;
