@@ -3,6 +3,7 @@ package com.github.lgoenaga.fintrack.controller;
 import com.github.lgoenaga.fintrack.dto.health.HealthResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 )
 public class HealthController {
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     /**
      * Obtiene el estado actual de la aplicación.
      *
@@ -33,7 +37,7 @@ public class HealthController {
 
         return new HealthResponse(
                 "UP",
-                "fintrack-personal-api"
+                applicationName
         );
     }
 }
