@@ -1,11 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HealthPage from "../pages/HealthPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AdminPage from "../pages/AdminPage";
 
 function AppRouter() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<HealthPage />} />
+                <Route
+                    path="/"
+                    element={<AdminPage />}
+                />
             </Routes>
         </BrowserRouter>
     );
